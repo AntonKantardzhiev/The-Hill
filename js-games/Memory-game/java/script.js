@@ -22,36 +22,40 @@ function newGame() {
         }
         return arr1;
     }
-    let list =[];
+
+    let list = [];
 
     let theArr = (shuffle(pokemons));
     for (let i = 0; i < 20; i++) {
-        let id = (i + 1);
-        let tab =  theArr[i];
-
+        let tab = theArr[i];
         list.push(tab);
-
-
     }
+    console.log(list);
 //Select the buttons
-    Array.from(document.querySelectorAll("button")).forEach(function($btn) {
-        $btn.addEventListener("click", function() {
-            let images = document.querySelectorAll("img");
-            switch ($btn.id){
-                case 1:
-                    images[0].src= list[0]+"png";
-            }
+    let table = [];
+    document.querySelectorAll("img").forEach((img, index) => {
+        img.addEventListener("click", () => {
+            //Make them flip
+            let check = img.getAttribute("src")
+            console.log(check);
+            img.src = "img/" + list[index-1] + ".png";
+            table.push(img);
+            checking();
         });
 
-
-
+        function checking(table) {
+            if (table.length === 2) {
+                if (table[0].src === table[1].src) {
+                    table[0].src = "img/backS.png";
+                }
+            }
+        }
     })
 
 }
+newGame();
 
 
-
-//Make them flip
 //Check the value of the tho
 //Flip again if not equal
 //Remove if equal and add points
