@@ -1,0 +1,21 @@
+
+main{
+  background-color: #00ff3d;
+  margin: 0 auto;
+  font-family: 'Tangerine', serif;
+  font-size: 20px;
+  text-shadow: 2px 2px 2px #4f4f4f;
+}
+
+.cards:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  width: 25%;
+}
+.front{
+  position: relative;
+}
+.backS{
+  position: absolute;
+  background-color: white;
+
+}
